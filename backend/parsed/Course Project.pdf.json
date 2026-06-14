@@ -1,0 +1,12 @@
+[
+    {
+        "page": 1,
+        "text": "School of Computer Science Engineering and Information Systems\nWinter Semester 2025-2026\nDevelopment of projects through students as part of the courses\nin place of assignment & quiz.\nProgramme Name & Branch: MCA Slot :D1+D2\nPAMCA506- FULL STACK WEB DEVELOPMENT\nPROJECT DEVELOPMENT\n Students are advised to use below tools only for application development:\no Either React JS/Angular JS with HTML, CSS capabilities for Front End\nDesign\no Node JS for Server Side Back End Scripting\no Database can be of your choice. Suggested to use Mongo DB\n Use any IDE of your choice\n Project should contain creative user interface design, main dashboard and all the\nnavigations should be initiated from the menus available in the dashboard interface.\n Ensure data displayed in the interface are extracted from the database. Static data\ndisplay is not encouraged.\nPRELIMINARY REVIEW: before 13/03/2026\nFINAL REVIEW: on or before 16/04/2025",
+        "image": "page_images\\Course Project.pdf_page_1.png"
+    },
+    {
+        "page": 2,
+        "text": "REVIEW REQUIREMENTS",
+        "image": "page_images\\Course Project.pdf_page_2.png"
+    }
+]

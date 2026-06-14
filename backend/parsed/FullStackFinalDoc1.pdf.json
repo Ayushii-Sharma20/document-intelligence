@@ -1,0 +1,102 @@
+[
+    {
+        "page": 1,
+        "text": "Documentation\nE-Commerce\nA Women’s Fashion E-Commerce Web Application\nTeam Memebers\nShilpi Kumari (25MCA0038)\nAnjana Ann Binoy (25MCA0163)\nAribah Mariyam (25MCA0128)\nC.S.Gaayathri (25MCA0193)\nAyushi Kumari (25MCA0177)\na. Software Requirement\n1.1 Introduction\nThe Microservices-Based E-commerce System is a web application designed to\nfacilitate online buying and selling of products. The system allows users to register,\nbrowse products, place orders, communicate with sellers, and receive notifications.\nUnlike traditional monolithic systems, this project follows a microservices\narchitecture, where each service is independent and handles a specific functionality.\nThis improves scalability, maintainability, and flexibility.\nThe system is developed using:\n• React / Typescript for frontend\n• Node.js with Express.js for backend\n• MongoDB for data storage\n1.2 Functional Requirements",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_1.png"
+    },
+    {
+        "page": 2,
+        "text": "User Management\n• User registration and login\n• Role-based access (Buyer, Seller, Admin)\n• Authentication and authorization\nProduct Management\n• Sellers can add, update, delete products\n• Buyers can browse and search products\nOrder Management\n• Buyers can place orders\n• Order tracking functionality\n• Order status updates (Pending, Shipped, Delivered)\nInventory Management\n• Maintain product stock levels\n• Automatic stock updates after orders\nNotification System\n• Notify sellers when orders are placed\n• Notify users about order updates\nChat System\n• Real-time messaging between buyer and seller\n• Allow buyers to ask product-related questions\n• Help sellers respond quickly to customers\n1.3 Non-Functional Requirements\n• Scalability: Each service can scale independently\n• Performance: Faster response due to distributed services\n• Security: JWT-based authentication\n• Availability: Services run independently on different ports\n• Maintainability: Easy to update or modify individual services\n• Reliability: Failure of one service does not affect others\n1.4 Assumptions and Constraints\nAssumptions\n• Users have internet access\n• Each service runs independently",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_2.png"
+    },
+    {
+        "page": 3,
+        "text": "• MongoDB is available for all services\nConstraints\n• No API Gateway used\n• Services communicate via REST APIs only\n• Limited to basic real-time chat (no WebSockets)\nb. Layout Design / System Architecture\n2.1 Architecture Explanation\n• The system follows a Microservices Architecture where each service is\nindependently developed and deployed. Each service runs on a separate port\nand communicates using REST APIs.\n• There is no API Gateway, so the frontend directly interacts with individual\nservices using Axios.\n2.2 Technology Stack\n• Frontend: React / Next.js\n• Backend: Node.js + Express\n• Database: MongoDB",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_3.png"
+    },
+    {
+        "page": 4,
+        "text": "• API Communication: REST (Axios)\n• Authentication: JWT\nStep-by-Step Architectural Flow of the System\nThe flow starts from the frontend, where the user logs in using the User Service. Then\nproducts are fetched from the Product Service. When the user places an order, the Order\nService processes it, updates inventory, and triggers notifications. Chat Service is used for\ncommunication.\n• User Service → Handles authentication and roles\n• Product Service → Manages product data\n• Order Service → Processes orders\n• Inventory Service → Manages stock\n• Notification Service → Sends alerts\n• Chat Service → Enables communication\nDatabase Design\nThe system follows a database-per-service approach, where each\nmicroservice manages its own data independently using MongoDB. This\nensures loose coupling, better scalability, and easier maintenance of the\nsystem.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_4.png"
+    },
+    {
+        "page": 5,
+        "text": "Each microservice maintains its own database collection. Data flows from users to products,\nthen to orders, which updates inventory and triggers notifications, while chat messages are\nstored separately. Additionally, Redis is used as a caching layer to store frequently accessed\ndata, improving system performance and reducing database load. This ensures modular,\nscalable, and efficient data handling.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_5.png"
+    },
+    {
+        "page": 6,
+        "text": "The ER diagram shows how users, products, orders, inventory, notifications, and messages\nare related using primary and foreign keys to manage data efficiently.\nC. Source Code Description\nGITHUB Link -https://github.com/Ayushii-Sharma20/E-commerce\nBackend Structure\nEach microservice contains:\n• Controllers\n• Routes\n• Models\n• Services\nMicroservices Structure\n• user-service\n• product-service\n• order-service\n• inventory-service\n• notification-service\nJWT implemetation",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_6.png"
+    },
+    {
+        "page": 7,
+        "text": "Inventory\nDataBase Connectivity\nRabbitMQ implementation",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_7.png"
+    },
+    {
+        "page": 8,
+        "text": "Role based access\nUser service",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_8.png"
+    },
+    {
+        "page": 9,
+        "text": "API Communication\nServices communicate using REST APIs via Axios.\nD. Execution Screenshots\n• Login/Register page",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_9.png"
+    },
+    {
+        "page": 10,
+        "text": "The login and registration module\nallows users to create an account\nand access the system as a Buyer,\nSeller, or Admin, ensuring role-\nbased authentication and access\ncontrol.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_10.png"
+    },
+    {
+        "page": 11,
+        "text": "• Product Listing (Buyer View)\nBuyers can browse and view available products with details such as price, description, and\nseller information.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_11.png"
+    },
+    {
+        "page": 12,
+        "text": "• Product Creation (Seller Panel)\nSellers can add new products by providing product details such as name, price, description,\nand stock information.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_12.png"
+    },
+    {
+        "page": 13,
+        "text": "• Order Placement (Buyer)\nBuyers can place orders for selected products, which are processed by the Order Service and\nstored in the system.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_13.png"
+    },
+    {
+        "page": 14,
+        "text": "StyleSphere\n\nCheckout\n\n© Shipping Information\n\nFull Name\nPhone\n\n9908979797\nAddress\n\nCity\n\nState\n\namil Nadu\n\nProfile\n\nEmail\n\nZIP Code\n\n643004\n\nOrder Summary\n\ni) Bracelet Watch\n\nTotal\n\n$7999.00\n\n$8638.92\n\nPlace Order - $8638.92\n\nStyleSphere\n\nStyleSphere\n\nOrder Details\n\n69daade9b4tacS8f7leefOcb\n\nTotal: 27999\n\nItems.\n\nBracelet Watch\n\nStyleSphere\n\nQuick Links\n\nOrder Confirmed!\n\n69daade9b4facSBf71eef0cb\n\n@ Estimated Delivery\n\niew Order Details Continue Shopping >\n\nCustomer Service\n\nNotifications\n\nOrder 6Sdaade9b4t4cS8ITIeefOcb placed\nsuccessfully\n\nOrder 694713¢2447¢66187S6de067\nplaced successfully\n\nStay Updated\n\nCONFIRMED\n\n37999\n\n",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_14.png"
+    },
+    {
+        "page": 15,
+        "text": "• Admin Dashboard\nThe admin panel provides system monitoring features, allowing the admin to view users,\nproducts, orders, and overall system activity.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_15.png"
+    },
+    {
+        "page": 16,
+        "text": "Platform Dashboard Chat Section Logout\n\nOverview Users ESM Products Orders\n\nsellerTest\n\n‘Admin Messaging Hub\n\nPlatform Dashboard ChatSection Logout\n\nOverview Users Sellers, Enna Orders:\n\nPlatform Dashboard Chat Section Logout\n\need -... |\n\nOrder #eefOcb\n\n27999.00\n\nOrder #887284 CONFIRME\n\n2500.00\n\nOrder #6de0bs\n\nCONFIRME\n\n",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_16.png"
+    },
+    {
+        "page": 17,
+        "text": "The admin logs in through the User Service and accesses the dashboard, where data from\nuser, product, order, inventory, and notification services is displayed for monitoring and\nmanagement.\n• Chat Interface (Buyer–Seller)\nThe chat system allows real-time communication between buyers and sellers for product\ninquiries and order-related discussions.\nRunning Services (Backend)\nAll microservices run independently on different ports, demonstrating the distributed\nmicroservices architecture.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_17.png"
+    },
+    {
+        "page": 18,
+        "text": "Downloads \\E-commerce-main run dev\n\nDownloads’ run dev\n@ di\n\nmon index\n\nTERMINAL\n\nPs C:\\Users\\shilp\\Downloads\\E-commerce-main\\services\\order-service> npi\n\nrun dev\n\n© injecting env (3) from .env\nMongoDB Connected (Order Service)\n@ Rabbitmg Connected (Order Service)\n@ order Service running on port 3003\n@ Event Sent: {\n\nuserId:\n\nmessage:\n\ntype:\n\ni\n\n",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_18.png"
+    },
+    {
+        "page": 19,
+        "text": "e. Conclusion\nThe Microservices-Based E-commerce System successfully demonstrates the implementation\nof a scalable and modular web application using the MERN stack. The system is designed\nwith independent microservices such as User, Product, Order, Inventory, Notification, and\nChat services, each handling a specific functionality.\nBy using a microservices architecture, the system achieves better scalability, flexibility, and\nfault isolation compared to traditional monolithic systems. The application supports essential\ne-commerce features including user authentication, product management, order processing,\ninventory tracking, notifications, and buyer-seller communication.\nAdditionally, the use of REST APIs for communication and Redis for caching enhances system\nperformance and responsiveness. Overall, the project provides a practical understanding of\nmodern system design and real-world application development.",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_19.png"
+    },
+    {
+        "page": 20,
+        "text": "Future Work\nThe system can be further enhanced with additional features and improvements to make it\nmore robust and production-ready:\n• Integration of an API Gateway for centralized request handling\n• Implementation of real-time chat using WebSockets (Socket.IO)\n• Integration of payment gateway for online transactions\n• Addition of recommendation system based on user behavior\n• Offers during special occasions",
+        "image": "page_images\\FullStackFinalDoc1.pdf_page_20.png"
+    }
+]
