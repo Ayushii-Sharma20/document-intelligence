@@ -1,9 +1,14 @@
 "use client";
+export const dynamic = "force-dynamic";
 
-import { useEffect, useState } from "react";
+import {
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function ChatPage() {
+function ChatContent() {
   const searchParams = useSearchParams();
 
   const documentFromUrl =
@@ -28,7 +33,7 @@ export default function ChatPage() {
   useEffect(() => {
 
     fetch(
-      "http://127.0.0.1:8000/documents"
+      "https://document-intelligence-s6en.onrender.com/documents"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -66,7 +71,7 @@ export default function ChatPage() {
     try {
 
       const res = await fetch(
-        "http://127.0.0.1:8000/ask",
+        "https://document-intelligence-s6en.onrender.com/ask",
         {
           method: "POST",
           headers: {
@@ -336,14 +341,14 @@ setQuestion("");
             </p>
 
             <a
-              href={`http://127.0.0.1:8000/images/${citation.image
+              href={`https://document-intelligence-s6en.onrender.com/images/${citation.image
                 .split("\\")
                 .pop()}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src={`http://127.0.0.1:8000/images/${citation.image
+                src={`https://document-intelligence-s6en.onrender.com/images/${citation.image
                   .split("\\")
                   .pop()}`}
                 alt="Citation"
@@ -365,5 +370,23 @@ setQuestion("");
 
       </div>
     </div>
+  );
+}
+export default function ChatPage() {
+  return (
+    <Suspense
+      fallback={
+        <div
+          style={{
+            padding: "40px",
+            textAlign: "center",
+          }}
+        >
+          Loading...
+        </div>
+      }
+    >
+      <ChatContent />
+    </Suspense>
   );
 }

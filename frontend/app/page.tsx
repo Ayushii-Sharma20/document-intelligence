@@ -8,7 +8,7 @@ export default function HomePage() {
 
   useEffect(() => {
     fetch(
-      "http://127.0.0.1:8000/documents"
+      "https://document-intelligence-s6en.onrender.com/documents"
     )
       .then((res) => res.json())
       .then((data) => {

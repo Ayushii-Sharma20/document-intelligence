@@ -20,7 +20,7 @@ export default function BulkUploadPage() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/bulk-upload",
+        "https://document-intelligence-s6en.onrender.com/bulk-upload",
         {
           method: "POST",
           body: formData,

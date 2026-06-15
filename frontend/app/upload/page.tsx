@@ -27,7 +27,7 @@ export default function UploadPage() {
         formData.append("file", file);
 
         const response = await fetch(
-          "http://127.0.0.1:8000/upload",
+          "https://document-intelligence-s6en.onrender.com/upload",
           {
             method: "POST",
             body: formData,
@@ -48,7 +48,7 @@ export default function UploadPage() {
         }
 
         const response = await fetch(
-          "http://127.0.0.1:8000/bulk-upload",
+          "https://document-intelligence-s6en.onrender.com/bulk-upload",
           {
             method: "POST",
             body: formData,
